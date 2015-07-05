@@ -1,0 +1,27 @@
+<svg>
+
+	<g class="count">
+		<text ng-repeat='point in points' ng-attr-x='{{point.cx +25}}' ng-attr-y='{{point.cy-10}}' class="tickLabel">{{point.d}}</text>
+	</g>
+
+	<g class="bottom-tick">
+		<text ng-repeat='point in points' ng-attr-x='{{point.cx +25}}' ng-attr-y='{{bottomLimit+20}}' class="tickLabel">{{point.label}}</text>
+	</g>
+<!--
+	<g class="side-tick">
+		<line class="border" 
+			ng-repeat='tick in ticks'
+			ng-attr-x1="{{leftLimit}}"
+			ng-attr-y1="{{tick.value}}"
+			ng-attr-x2="{{leftLimit-6}}"
+			ng-attr-y2="{{tick.value}}"/>
+		<text ng-repeat='tick in ticks' ng-attr-x='{{leftLimit-8}}' ng-attr-y='{{svgHeight - tick.value - 21}}' class="tickLabel sideLabel">{{tick.text}}</text>
+	</g>
+-->
+	<g class="axes">
+	<!--	<line class="border" ng-attr-x1='{{leftLimit}}' y1='0' ng-attr-x2='{{leftLimit}}' ng-attr-y2='{{bottomLimit}}'/> -->
+		<line class="border" ng-attr-x1='{{leftLimit}}' ng-attr-y1='{{bottomLimit}}' ng-attr-x2='{{rightLimit}}' ng-attr-y2='{{bottomLimit}}'/>
+	</g>
+	<g class="datapoint" ng-transclude>
+	</g>
+</svg>

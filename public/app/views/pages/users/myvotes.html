@@ -1,0 +1,41 @@
+<div class="page-header">
+	<h1>
+		Polls
+		<a href="/vote/create" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span>
+			New poll 
+		</a>
+	</h1>
+</div>
+
+<div class="jumbotron" ng-show="allMyVotes.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading Users</p>
+</div>
+
+<table class="table table-bordered table-striped" ng-show="allMyVotes.myVotes.data">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th class="col-sm-1"></th>
+			<th class="col-sm-1"></th>
+			<th class="col-sm-1"></th>
+		</tr>
+	</thead>
+
+<tbody>
+	<tr ng-repeat="poll in allMyVotes.myVotes.data">
+		<td>{{poll.name}}</td>
+		<td class="col-sm-1">
+			<a href="/vote/{{poll._id}}" class="btn btn-danger">View</a>
+		</td>
+		<td class="col-sm-1">
+			<a href="/vote/edit/{{poll._id}}" class="btn btn-danger">Edit</a>
+		</td>
+		<td class="col-sm-1">
+			<a href="/user" class="btn btn-danger" ng-click="allMyVotes.removeVote(poll._id)">Remove</a>
+		</td>
+	</tr>
+</tbody>
+
+</table>

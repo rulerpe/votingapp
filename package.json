@@ -1,0 +1,12 @@
+{
+  "name": "votingApp",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.1",
+    "express": "^4.12.4",
+    "jsonwebtoken": "^5.0.2",
+    "mongoose": "^4.0.5",
+    "morgan": "^1.6.0"
+  }
+}

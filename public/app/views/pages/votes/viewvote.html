@@ -1,0 +1,22 @@
+
+<div class="page-header">
+	<h1>
+		{{viewVote.voteData.options[0].name}}
+	</h1>
+</div>
+<div class="row col-sm-10 col-sm-offset-1">
+	<div class="jumbotron" ng-show="!viewVote.voted">
+		<ul class="list-unstyled options">
+			<li class="picklist" ng-repeat="option in viewVote.voteData.options"><button ng-click="viewVote.vote(option.name)" class="btn btn-primary">{{option.name}}</button></li>
+		</ul>
+
+
+		<chart height='400' width = '600'>
+			<datapoint ng-repeat="option in viewVote.voteData.options" label='{{option.name}}' d='{{option.count}}'></datapoint>
+
+		</chart>
+
+	<div>
+	<h1 ng-show="viewVote.voted">Thank you for the Vote</h1>
+
+</div>
